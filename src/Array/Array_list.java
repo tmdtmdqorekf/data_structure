@@ -24,6 +24,7 @@ class ArrayList<E> implements List<E> {
         data[pos] = item;
         size++;
     }
+
     @Override
     public void append(E item) {
         if (size == data.length) {
@@ -47,9 +48,7 @@ class ArrayList<E> implements List<E> {
         for (int i = pos; i < size-1; i++) {
             data[i] = data[i+1];
         }
-
         size--;
-
         return ret;
     }
     @Override

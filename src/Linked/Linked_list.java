@@ -28,12 +28,13 @@ class LinkedList<E> implements List<E> {
         for(int i=0; i<pos; i++) {
             curr = curr.next;
         }
-        curr.setNext(new Link(item, curr.next));
+        curr.setNext(Link.get(item, curr.next));
         if (curr == tail) {
             tail = curr.next;
         }
         size++;
     }
+
     @Override
     public void append(E item) {
         tail.next = new Link(item, null);
@@ -69,10 +70,9 @@ class LinkedList<E> implements List<E> {
         }
 
         Link<E> tmp = curr.next;
+        tmp.release();
 
         curr.next = curr.next.next;
-
-        tmp.release();
 
         size--;
         return ret;

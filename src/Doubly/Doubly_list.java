@@ -25,6 +25,7 @@ class DoublyLinkedList<E> implements List<E> {
 
         size++;
     }
+
     @Override
     public void append(E item) {
         if (head == null) {
@@ -70,6 +71,7 @@ class DoublyLinkedList<E> implements List<E> {
         size--;
         return ret;
     }
+
     @Override
     public int length() {
         return size;
